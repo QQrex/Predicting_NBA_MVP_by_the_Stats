@@ -17,7 +17,10 @@ CREATE TABLE IF NOT EXISTS seasons (
 	season_year varchar(7) NOT NULL,
 	start_year int NOT NULL,
 	end_year int NOT NULL,
-	PRIMARY KEY (season_id)
+	mvp varchar(25),
+	player_id char(15),
+	PRIMARY KEY (season_id),
+	FOREIGN KEY (player_id) REFERENCES players (player_id)
 );
 
 CREATE TABLE IF NOT EXISTS games (
@@ -35,6 +38,7 @@ CREATE TABLE IF NOT EXISTS games (
 CREATE TABLE IF NOT EXISTS scoreboards (
 	game_id char(15) NOT NULL,
 	team_id char(15) NOT NULL,
+	season_id char(5) NOT NULL,
 	abb char(3) NOT NULL,
 	city char(20) NOT NULL,
 	player_id char(15) NOT NULL,
@@ -60,5 +64,8 @@ CREATE TABLE IF NOT EXISTS scoreboards (
 	pf int NOT NULL,
 	pts int NOT NULL,
 	plus_minus int NOT NULL,
-	PRIMARY KEY (game_id, player_id)
+	PRIMARY KEY (game_id, player_id),
+	FOREIGN KEY (game_id, team_id) REFERENCES games (game_id, team_id),
+	FOREIGN KEY (team_id) REFERENCES teams (team_id),
+	FOREIGN KEY (season_id) REFERENCES seasons (season_id)
 );
