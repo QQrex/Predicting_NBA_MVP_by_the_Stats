@@ -36,11 +36,11 @@ For this project, we will be creating a total of 5 tables:
 
 - Scoreboards table
 
-![ERD]()
+![ERD](https://github.com/QQrex/Predicting_NBA_MVP_by_the_Stats/blob/main/Images/Final%20ERD%20table.PNG)
 
 Once our data has been extracted from the API, we checked for null values and datatypes before using sqlalchemy to import our data into pgAdmin. After our data has been imported into our database. We did a quick check on our table connections by doing a LEFT join on game_id from our games table and seasons table.
 
-![join]()
+![join](https://github.com/QQrex/Predicting_NBA_MVP_by_the_Stats/blob/main/Images/SQL_join_test.PNG)
 
 ### Machine learning
 
