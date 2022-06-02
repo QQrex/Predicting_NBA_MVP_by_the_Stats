@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Real MVP</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"/>
+      <link rel="stylesheet" href="static/css/styles.css">
+
+</head>
+<body class="bg-dark">
+
+    <div class="jumbotron">
+        <h1 class="display-4"><br>Who is the real NBA MVP?<br></h1>
+    </div>
+
+    <div class="container-fluid,">
+        <div class="row">
+            <div class="col-md-1">
+                <h3><br> <small></small></h3>
+            </div>
+            <div class="col-md-10">
+                <p>
+                    Starting from the NBA 1955-56 regular season, one player is choosen to win the Maurice Podoloff Trophy or more commonly known as the Most Valuable Player or MVP award. Over the years the winner of this reward has be choosen through voting from NBA player votes, sportswriters, broadcasters and even fans votes. With that said, every year the debate for who should be the MVP has been contentious (except for the Stephen Curry who was crown the unanimous MVP in 2015-16). However, based purely on the season stats of a player, could we predict the results of the MVP race? Or is there some magic a MVP winner does that doesn't show up on the stats sheet that truely makes them the MVP?
+                    <br><br>
+                    <br>For us to predict the MVP, we will be training supervised machine learning models with NBA player stats to see if we could predict the 2021-22 MVP. Before we train our models, we need to go over the major class imbalance in our dataset. In each NBA season there is around 450 players total and only one player can become the MVP. In order to address this, we will try using random oversampling, SMOTE and SMOTEEN to see which technique would boost our accuracy. For our machine learning models we will fit ogistic regression, SVM, decision tree, random forest and boosting to see which model gives us the best results.<br>  
+                </p>
+            </div>
+            <div class="col-md-1">
+                <h3><br> <small></small></h3>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container-fluid,">
+        <div class="row">
+            <div class="col-md-1"></div> 
+            <div class="col-md-10"> 
+                <h1 class="display-4"><h3><small>MVP Winners in the last 10 years</small></h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Season</th>
+                            <th>GP</th>
+                            <th>W</th>
+                            <th>APT(s)</th>
+                            <th>FGM</th>
+                            <th>FGA</th>
+                            <th>FG%</th>
+                            <th>FG3M</th>
+                            <th>FG3A</th>
+                            <th>FG3%</th>
+                            <th>FTM</th>
+                            <th>FTA</th>
+                            <th>FT%</th>
+                            <th>OREB</th>
+                            <th>DREB</th>
+                            <th>REB</th>
+                            <th>AST</th>
+                            <th>STL</th>
+                            <th>BLK</th>
+                            <th>TO</th>
+                            <th>PF</th>
+                            <th>PTS</th>
+                            <th>PM</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mvp_table"></tbody>
+                </table>
+            </div>
+            <div class="col-md-1"></div> 
+        </div>
+    </div>
+
+    <hr style="height:30px">
+
+    <div class="conatiner-fluid,">
+        <div class="row">
+            <div class="col-md-1"></div> 
+            <div class="col-md-2">
+                <form class="bg-dark">
+                    <p>Filter Search</p>
+                    <ul class="list-group bg-dark">
+
+                        <li class="list-group-item bg-dark" style="font-family: inherit; font-size: 1rem;">
+                            <label for="T">Class imbalance technique</label>
+                            <input type="text" placeholder="RO" id="T" />    
+                        </li>
+                        
+                        <li class="list-group-item bg-dark" style="font-family: inherit; font-size: 1rem;">
+                            <label for="M">Machine learning model</label>
+                            <input type="text" placeholder="RL" id="M" />
+
+                        <div class="wrapper">
+                            <nav class="navbar navbar-dark navbar-expand-lg">
+                                <a class="navbar-brand" href="index_updated.html">Refresh table</a>
+                            </nav>
+                        </div>
+                    </ul>
+                </form>
+            </div>
+
+            <div class="col-md-8">
+                <h1 class="display-4"><h3><small>Machine Learning Model Predictions</small></h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>GP</th>
+                            <th>W</th>
+                            <th>APT(s)</th>
+                            <th>FGM</th>
+                            <th>FGA</th>
+                            <th>FG%</th>
+                            <th>FG3M</th>
+                            <th>FG3A</th>
+                            <th>FG3%</th>
+                            <th>FTM</th>
+                            <th>FTA</th>
+                            <th>FT%</th>
+                            <th>OREB</th>
+                            <th>DREB</th>
+                            <th>REB</th>
+                            <th>AST</th>
+                            <th>STL</th>
+                            <th>BLK</th>
+                            <th>TO</th>
+                            <th>PF</th>
+                            <th>PTS</th>
+                            <th>PM</th>
+                            <th>T</th>
+                            <th>M</th>
+                        </tr>
+                    </thead>
+                    <tbody id='ml_table'></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-1"></div> 
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+<script src="static/js/mvp_data.js"></script>
+<script src="static/js/ml_data.js"></script>
+<script src="static/js/app.js"></script>
+</body>
+
+</html>
