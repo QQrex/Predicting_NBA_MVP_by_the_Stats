@@ -4,6 +4,7 @@ const tableData = mvp_data;
 // get table references
 var tbodym = d3.select("#mvp_table");
 var tbodyml = d3.select("#ml_table");
+
 function buildTable(data) {
 
   // Next, loop through each object in the data
@@ -26,8 +27,6 @@ buildTable(tableData);
 
 // from ml_data.js
 const tableData2 = ml_data;
-
-// get table references
 
 
 function buildTable2(data) {
