@@ -34,11 +34,13 @@ For this project, we will be creating a total of 5 tables:
 
 - Scoreboards table
 
-![ERD](https://github.com/QQrex/Predicting_NBA_MVP_by_the_Stats/blob/main/Images/Final%20ERD%20table.PNG)
-
 Once our data has been extracted from the www.NBA.com API, with the assistance from API client package developed by nba_api, we checked for null values and datatypes before importing (sqlalchemy) our data into pgAdmin. After our data has been imported into our database. We did a check on our table connections by doing a LEFT join on game_id from our games table and seasons table.
 
 ![join](https://github.com/QQrex/Predicting_NBA_MVP_by_the_Stats/blob/main/Images/SQL_join_test.PNG)
+
+#### ERD
+
+![ERD](https://github.com/QQrex/Predicting_NBA_MVP_by_the_Stats/blob/main/Images/Final%20ERD%20table.PNG)
 
 ### Machine learning
 
@@ -54,7 +56,7 @@ Before we train our models, we need to go over the major class imbalance in our 
 
 Our results do not seem promising on any of our models.  The best performing model, utilized SMOTE / logistic regression, achieved an accuracy score of 0.99, precision score of 0.5, recall of 1.0 and F1 of 0.67 score.
 
-![smote-lr]()
+![smote-lr](https://github.com/QQrex/Predicting_NBA_MVP_by_the_Stats/blob/main/Images/SMOTE%20-%20LR.PNG)
 >SMOTE / logistic regression
 
 #### Summary
@@ -68,12 +70,17 @@ Our recommendations for future analysis would be to first to extract more data f
 
 For our dashboard, we will show a table of all the MVPs the past 10 years. In addition, we also include a queryable table which will show our MVP predictions for each ML model when given season 2021-22 data. We will visualize our data using HTML/CSS and Javascript. The dashboard is located in the dashboard folder (./Dashboard/index_updated.html).
 
-### Resources and tools
+## Resources and tools
 
-nba_api v1.1.11 - API Client package developed by https://github.com/swar/nba_api.
-Jupyter Notebook v6.4.11
-Visual Studios v1.67.2
-Postgres pgAdmin v6.1
+- www.NBA.com
+
+- nba_api v1.1.11 - API Client package developed by https://github.com/swar/nba_api
+
+- Jupyter Notebook v6.4.11
+
+- Visual Studios v1.67.2
+
+- Postgres pgAdmin v6.1
 
 
 
